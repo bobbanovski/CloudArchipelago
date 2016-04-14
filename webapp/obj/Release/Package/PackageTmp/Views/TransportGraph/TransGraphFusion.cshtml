@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "TransGraphFusion";
+}
+
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <h1 class="page-title txt-color-blueDark semi-bold"><i class="fa-fw fa fa-truck"></i> Transport Optimisation <span>> Graphs by Fusion Charts</span></h1>
+        </div>
+    </div>
+
+    <h2>@Html.Raw(ViewBag.Flag)</h2>
+    <h2>@Html.Raw(ViewBag.Error)</h2>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12 col-lg-4">
+                <!-- new widget -->
+                <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false" data-widget-togglebutton="false"
+                     data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+                    <header>
+                        <span class="widget-icon"> <i class="glyphicon glyphicon-signal txt-color-darken"></i> </span>
+                        <h2>Project List</h2>
+                    </header>
+
+                    <div @*class="no-padding"*@>
+                        <div class="widget-body no-padding">
+                            <!-- content -->
+                            <table class="table table-striped table-bordered table-hover table.display" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Project Name</th>
+                                        <th>Project Start Date</th>
+                                        <th>Optimised Transport Cost</th>
+                                        <th>Get Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var project in Model)
+                                    {
+                                        <tr>
+                                            <td>@project.Name</td>
+                                            <td>@project.Date</td>
+                                            <td>@project.MinimisedCost</td>
+                                            <td>@Ajax.ActionLink("View Charts", "GraphFusionView", new { id = project.TransprojectID }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "TransGraphs", InsertionMode = InsertionMode.Replace })</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!-- end content -->
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <div id="TransGraphs">
+                <div class="col-md-8">
+                    <div class="well">
+                        <div class="row">
+                            <h1 class="semi-bold">Visual Presentation of data - Fusion Charts</h1>
+                            <hr />
+                            <p>Chart.js is limited in the variety of graphs that can be displayed. Fusion charts is capable of generating far more complicated graphs, 
+                            in this case a stacked chart, showing all of the sources that supply a particular city.</p>
+                            <p>Click on "View Project" to display a graph.</p>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--End of Partial view-->
+        </div>
+    </section>
+</div>
+
+@*@section pagespecific {
+    <script>
+
+</script>
+    }*@
+

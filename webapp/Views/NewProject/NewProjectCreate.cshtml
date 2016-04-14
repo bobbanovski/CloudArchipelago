@@ -1,0 +1,221 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.Project
+@{
+    ViewBag.Title = "NewProjectCreate";
+}
+
+<h2>NewProjectCreate</h2>
+
+<h2>Create</h2>
+
+@Html.ActionLink("Return to Project List", "NewProjectIndex")
+
+<h3>Current time is: @Html.Raw(ViewBag.CurrentTime)</h3>
+
+
+
+<h3> using separate action - parameters - Test for saving to database</h3>
+   <!--Use this as a flag-->
+<div><h3>Upload Result: </h3>@Html.Raw(ViewBag.UploadResult)</div>
+
+<div><h3>Error flag: </h3>@Html.Raw(ViewBag.Error)</div>
+
+@*<form method="post" action="InsertTemplatePar" enctype="multipart/form-data">
+    
+    <div>@Html.DisplayNameFor(project => Model.ProjectName)</div>
+    <div><input type="text" required placeholder="Project Name Here" , name="ProjectName" /></div>
+    <br />
+    <div><input type="text" readonly value="@ViewBag.CurrentTime" name="ProjectDate" /></div>
+    <br />
+    <div><input type="file" value="Upload Template" name="excelTemplate" formenctype="multipart/form-data" /></div>
+    <br />
+    <input type="submit" value="Save to Server" />
+</form>*@
+
+@using (Html.BeginForm("NewProjectCreate", "NewProject", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <!--name is what gets passed to the controller-->
+    <div>@Html.DisplayNameFor(project => Model.ProjectName)</div>
+    <div><input type="text" required placeholder="Project Name Here", name="ProjectName" /></div>
+    <br />
+    <div>@Html.DisplayNameFor(project => Model.ProjectDate)</div>
+    <div><input type="text" readonly value="@ViewBag.CurrentTime", name="ProjectDate" /></div>
+    <br />
+    <div><input class="btn btn-success" type="file" name="excelfile" value="choose file" /></div>
+    <br />
+    <div><input class="btn btn-primary" type="submit" value="Upload Template" /></div>
+    <div></div>
+    <div></div>
+}
+
+
+<section id="widget-grid" class="">
+    <div class="row">
+        <!-- NEW WIDGET START -->
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--Widget id = 0-->
+            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1"
+                 data-widget-editbutton="false"
+                 data-widget-deletebutton="false">
+                <!--Heading for Vessels Widget-->
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                    <h2>Vessels Table</h2>
+                </header>
+
+                <div>
+                    <!--Do NOT forget this - required for alignment-->
+
+                    <div class="widget-body no-padding">
+                        <table id="dt_vessels" class="table table-striped table-bordered table-hover table.display" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Vessel Name</th>
+                                    <th>Destination</th>
+                                    <th>Total Moisture</th>
+                                    <th>Maximum Ash</th>
+                                    <th>Minimum Calorific Value</th>
+                                    <th>Maximum Volatile Matter</th>
+                                    <th>Maximum Sulfur</th>
+                                    <th>Price / Tonne</th>
+                                    <th>Tonnes Required Total</th>
+                                    <th>Benchmark Calorific Value</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if(Model.Vessels != null) { 
+                                    foreach (var v in Model.Vessels)
+                                    {
+                                        <tr>
+                                            <td>@v.Name</td>
+                                            <td>@v.Destination</td>
+                                            <td>@v.MoistureMax</td>
+                                            <td>@v.AshMax</td>
+                                            <td>@v.CalorificMin</td>
+                                            <td>@v.VolatileMax</td>
+                                            <td>@v.SulfurMax</td>
+                                            <td>@v.PricePerTonne</td>
+                                            <td>@v.TonnesMin</td>
+                                            <td>@v.CalorificBenchMark</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div> <!--End of widget body-->
+
+
+                </div>
+            </div>
+        </article>
+    </div> <!--End of row-->
+    <!--Start of Components Table-->
+    <div class="row">
+        <!-- NEW WIDGET START -->
+        <article class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!--Widget id = 0-->
+            <div class="jarviswidget jarviswidget-color-darken" id="wid-id-2"
+                 data-widget-editbutton="false"
+                 data-widget-deletebutton="false">
+                <!--Heading for Vessels Widget-->
+                <header>
+                    <span class="widget-icon"> <i class="fa fa-table"></i> </span>
+                    <h2>Components Table</h2>
+                </header>
+
+                <div>
+                    <!--Do NOT forget this - required for alignment-->
+
+                    <div class="widget-body no-padding">
+                        <table id="dt_components" class="table table-striped table-bordered table-hover table.display" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Component Name</th>
+                                    <th>Starting Tonnage</th>
+                                    <th>Air-Dried Moisture</th>
+                                    <th>Total Moisture</th>
+                                    <th>Ash Percentage</th>
+                                    <th>Calorific Value</th>
+                                    <th>Volatiles</th>
+                                    <th>Sulfur Percentage</th>
+                                    <th>Initial FOB</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                @if (Model.Components != null) { 
+                                    foreach (var c in Model.Components)
+                                    {
+                                        <tr>
+                                            <td>@c.Name</td>
+                                            <td>@c.Tonnes</td>
+                                            <td>@c.MoistureAir</td>
+                                            <td>@c.MoistureTotal</td>
+                                            <td>@c.AshStart</td>
+                                            <td>@c.CalorificStart</td>
+                                            <td>@c.VolatileStart</td>
+                                            <td>@c.SulfurStart</td>
+                                            <td>@c.FOBStart</td>
+                                        </tr>
+                                    }
+                                }
+                            </tbody>
+                        </table>
+                    </div> <!--End of widget body-->
+
+
+                </div>
+            </div>
+        </article>
+    </div> <!--End of row-->
+
+
+</section>
+
+
+
+@*<h3> using separate action - context object</h3>
+<br />
+
+<form method="post" action="InsertTemplateContext">
+
+    name is what gets passed to the controller
+    <div>@Html.DisplayNameFor(project => Model.ProjectName)</div>
+    <div><input type="text" required placeholder="Project Name Here" , name="ProjectName" /></div>
+    <br />
+    <div><input type="text" readonly value="@ViewBag.CurrentTime" name="ProjectDate" /></div>
+    <br />
+    <div><input type="file" value="Upload Template" name="excelTemplate" /></div>
+    <br />
+    <input type="submit" value="Save to Server" />
+</form>*@
+
+
+
+
+
+
+
+
+
+
+
+
+@*<h3> Using HttpPost - same action</h3>
+    @using (Html.BeginForm())
+    {
+        <div>
+            @Html.HiddenFor(project => project.ProjectID)
+        </div>
+
+        <div>@Html.DisplayNameFor(project => project.ProjectName)</div>
+        <div>@Html.EditorFor(project => project.ProjectName)</div>
+
+        <div>@Html.DisplayNameFor(project => project.ProjectDate)</div>
+        @*<div>@Html.TextBoxFor(project => project.ProjectDate, new { @Value= })</div>*@
+@*<div>@Html.EditorFor(project => project.ProjectDate, new { @Value = DateTime.Now})</div>*@
+
+@*<input type="datetime" ="example" />*@
+
+@*<div>@Html.TextBox("Submit", "Save Changes", new { type = "submit" })</div>
+    }*@

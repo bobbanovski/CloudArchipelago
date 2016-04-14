@@ -1,0 +1,56 @@
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.dll.config
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.Model.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.Model.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.csprojResolveAssemblyReference.cache
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.dll.config
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.xml
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.csprojResolveAssemblyReference.cache
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.ArchipelagoModel.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.ArchipelagoModel.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.Migrations.Initial.resources
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.Migrations.Seed.resources
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.Migrations.Seed1.resources
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.csproj.GenerateResource.Cache
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\Excel.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.DAL\bin\Release\Excel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.dll.config
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.DAL.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\EntityFramework.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\EntityFramework.SqlServer.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.Core.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.ArchipelagoModel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\Excel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\SmartAdminMvc.ArchipelagoModel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\EntityFramework.xml
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\EntityFramework.SqlServer.xml
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.Core.xml
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\bin\Release\Excel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.csprojResolveAssemblyReference.cache
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.Migrations.Initial.resources
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.csproj.GenerateResource.Cache
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.DAL\obj\Release\SmartAdminMvc.DAL.pdb

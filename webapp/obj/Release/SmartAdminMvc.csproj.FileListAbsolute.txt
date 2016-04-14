@@ -1,0 +1,136 @@
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.dll.config
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Antlr3.Runtime.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.SqlServer.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Newtonsoft.Json.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Helpers.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Mvc.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Optimization.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Razor.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Razor.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\WebGrease.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Antlr3.Runtime.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.SqlServer.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\Newtonsoft.Json.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Helpers.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Mvc.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Optimization.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Razor.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Razor.xml
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\obj\Release\SmartAdminMvc.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\obj\Release\SmartAdminMvc.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\obj\Release\SmartAdminMvc.csprojResolveAssemblyReference.cache
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.DAL.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.Model.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.DAL.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.Model.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.dll.config
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\Antlr3.Runtime.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.SqlServer.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\GemBox.Spreadsheet.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.Web.Infrastructure.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Newtonsoft.Json.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.DAL.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Helpers.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Mvc.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Optimization.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Razor.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Deployment.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Razor.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\WebGrease.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.DAL.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\Antlr3.Runtime.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\EntityFramework.SqlServer.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\GemBox.Spreadsheet.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\Newtonsoft.Json.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Helpers.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Mvc.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Optimization.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.Razor.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Deployment.xml
+D:\Archipelago\Archipelago4\Working\webapp\bin\System.Web.WebPages.Razor.xml
+D:\Archipelago\Archipelago4\Working\webapp\obj\Release\SmartAdminMvc.csprojResolveAssemblyReference.cache
+D:\Archipelago\Archipelago4\Working\webapp\obj\Release\SmartAdminMvc.dll
+D:\Archipelago\Archipelago4\Working\webapp\obj\Release\SmartAdminMvc.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.ArchipelagoModel.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\SmartAdminMvc.ArchipelagoModel.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\Glimpse.AspNet.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Glimpse.Core.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Glimpse.Mvc5.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Excel.dll
+D:\Archipelago\Archipelago4\Working\webapp\bin\Excel.pdb
+D:\Archipelago\Archipelago4\Working\webapp\bin\ICSharpCode.SharpZipLib.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.dll.config
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\Antlr3.Runtime.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\EntityFramework.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\EntityFramework.SqlServer.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Excel.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\GemBox.Spreadsheet.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Glimpse.AspNet.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Glimpse.Core.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Glimpse.Mvc5.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\ICSharpCode.SharpZipLib.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Microsoft.AspNet.Identity.Core.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Microsoft.Web.Infrastructure.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\Newtonsoft.Json.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.ArchipelagoModel.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.DAL.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Helpers.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Mvc.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Optimization.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Razor.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.WebPages.Deployment.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.WebPages.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.WebPages.Razor.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\WebGrease.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.ArchipelagoModel.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMvc.DAL.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\Antlr3.Runtime.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\EntityFramework.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\EntityFramework.SqlServer.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\Excel.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\GemBox.Spreadsheet.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\Microsoft.AspNet.Identity.Core.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\Newtonsoft.Json.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Helpers.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Mvc.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Optimization.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.Razor.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.WebPages.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.WebPages.Deployment.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\System.Web.WebPages.Razor.xml
+D:\MVC Playground\CloudArchipelago\webapp\obj\Release\SmartAdminMvc.csprojResolveAssemblyReference.cache
+D:\MVC Playground\CloudArchipelago\webapp\obj\Release\SmartAdminMvc.dll
+D:\MVC Playground\CloudArchipelago\webapp\obj\Release\SmartAdminMvc.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\PagedList.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\PagedList.Mvc.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMVC.DALContusoUni.dll
+D:\MVC Playground\CloudArchipelago\webapp\bin\SmartAdminMVC.DALContusoUni.pdb
+D:\MVC Playground\CloudArchipelago\webapp\bin\PagedList.xml
+D:\MVC Playground\CloudArchipelago\webapp\bin\PagedList.Mvc.xml

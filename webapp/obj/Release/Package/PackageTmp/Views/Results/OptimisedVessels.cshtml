@@ -1,0 +1,215 @@
+﻿@*@model SmartAdminMvc.ArchipelagoModel.Project
+
+    @{
+        ViewBag.Title = "OptimisedVessels";
+    }*@
+
+@*<div id="content">*@
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Results <span>> Optimised Results</span></h1>
+        </div>
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-12">
+
+                <!-- Widget ID (each widget will need unique ID)-->
+                <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false"  
+                     data-widget-editbutton="false" data-widget-sortable="false">
+                    <!-- widget options:
+                usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                data-widget-colorbutton="false"
+                data-widget-editbutton="false"
+                data-widget-togglebutton="false"
+                data-widget-deletebutton="false"
+                data-widget-fullscreenbutton="false"
+                data-widget-custombutton="false"
+                data-widget-collapsed="true"
+                data-widget-sortable="false"
+
+            -->
+                    <header>
+                        <span class="widget-icon"> <i class="glyphicon glyphicon-signal"></i> </span>
+                        <h2>Validation </h2>
+
+                    </header>
+
+                    <!-- widget div-->
+                    <div>
+
+                        <!-- widget edit box -->
+                        <div class="jarviswidget-editbox">
+                            <!-- This area used as dropdown edit box -->
+                            <input class="form-control" type="text">
+                        </div>
+                        <!-- end widget edit box -->
+                        <!-- widget content -->
+                        <div class="widget-body">
+
+                            <!-- chart area -->
+                            <canvas id="barChart" height="120" width="600"></canvas>
+
+                        </div>
+                        <!-- end widget content -->
+
+                    </div>
+                    <!-- end widget div -->
+
+                </div>
+            </article>
+            <article class="col-sm-12 col-lg-12">
+                <!-- new widget -->
+                <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="true"
+                     data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+                    <header>
+                        <span class="widget-icon"> <i class="fa fa-anchor"></i> </span>
+                        <h2>Vessels</h2>
+                    </header>
+
+                    <div>
+                        <div id="VesselDetails" class="widget-body no-padding">
+                            <table id="dt_vessels" class="table table-striped table-bordered table-hover table.display" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Vessel Name</th>
+                                        <th>Vessel Destination</th>
+                                        <th>Maximum moisture</th>
+                                        <th>Maximum Ash</th>
+                                        <th>Minimum Calorific Amount</th>
+                                        <th>Maximum Volatiles</th>
+                                        <th>Maximum Sulfur</th>
+                                        <th>Price per Tonne</th>
+                                        <th>Minimum Tonnes</th>
+                                        <th>Calorific Benchmark</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var vessel in Model.Vessels)
+                                    {
+                                        <tr>
+                                            <td>@vessel.Name</td>
+                                            <td>@vessel.Destination</td>
+                                            <td>@vessel.MoistureMax</td>
+                                            <td>@vessel.AshMax</td>
+                                            <td>@vessel.CalorificMin</td>
+                                            <td>@vessel.VolatileMax</td>
+                                            <td>@vessel.SulfurMax</td>
+                                            <td>@vessel.PricePerTonne</td>
+                                            <td>@vessel.TonnesMin</td>
+                                            <td>@vessel.CalorificBenchMark</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+@*</div>*@
+
+
+
+@section pagespecific {
+    @*<script src="~/scripts/jquery-2.2.0.min.js",></script>*@
+
+
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                //Data Tables section
+                var responsiveHelper_project = undefined;
+                var responsiveHelper_vessels = undefined;
+                var responsiveHelper_components = undefined;
+
+                var breakpointDefinition = {
+                    tablet: 1024,
+                    phone: 480
+                };
+
+                //Vessels Table
+                $('#dt_vessels').dataTable({
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                        "t" +
+                        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        if (!responsiveHelper_vessels) {
+                            responsiveHelper_vessels = new ResponsiveDatatablesHelper($('#dt_vessels'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_vessels.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_vessels.respond();
+                    }
+                });
+
+                //Charts
+
+                pageSetUp();
+
+                var barOptions = {
+                    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+                    scaleBeginAtZero: true,
+                    //Boolean - Whether grid lines are shown across the chart
+                    scaleShowGridLines: true,
+                    //String - Colour of the grid lines
+                    scaleGridLineColor: "rgba(0,0,0,.2)",
+                    //Number - Width of the grid lines
+                    scaleGridLineWidth: 1,
+                    //Boolean - If there is a stroke on each bar
+                    barShowStroke: true,
+                    //Number - Pixel width of the bar stroke
+                    barStrokeWidth: 1,
+                    //Number - Spacing between each of the X value sets
+                    barValueSpacing: 5,
+                    //Number - Spacing between data sets within X values
+                    barDatasetSpacing: 1,
+                    //Boolean - Re-draw chart on page resize
+                    responsive: true,
+                    //String - A legend template
+                    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+                }
+
+                var barData = {
+                    labels: ["Vessel 1", "Vessel 2", "Vessel 3", "April", "May", "June", "July"], // Edit this
+                    datasets: [
+                       {
+                           label: "Vessel Requirements",
+                           fillColor: "rgba(220,220,220,0.5)",
+                           strokeColor: "rgba(220,220,220,0.8)",
+                           highlightFill: "rgba(220,220,220,0.75)",
+                           highlightStroke: "rgba(220,220,220,1)",
+                           data: [65, 59, 80, 81, 56, 55, 40] // Edit this
+                       },
+                       {
+                           label: "Optimised Vessel",
+                           fillColor: "rgba(151,187,205,0.5)",
+                           strokeColor: "rgba(151,187,205,0.8)",
+                           highlightFill: "rgba(151,187,205,0.75)",
+                           highlightStroke: "rgba(151,187,205,1)",
+                           data: [28, 48, 40, 19, 86, 27, 90] // Edit this
+                       }
+                    ]
+                };
+
+                // render chart
+                var ctx = document.getElementById("barChart").getContext("2d");
+                var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+
+                // END BAR CHART
+           })
+    </script>
+}

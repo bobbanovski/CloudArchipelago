@@ -1,0 +1,26 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.TransProject
+
+<h2>Upload your Project Template</h2>
+
+<div>
+    <a href="TransportIndex" class="btn btn-danger"><i class="fa fa-times"></i>  Cancel Project Creation</a>
+</div>
+<br />
+<div>
+    <a href="~/Content/files/TemplateStore/TransportTemplate.xlsx" class="btn btn-primary"><i class="fa fa-cloud-download"></i>  Download Excel Template</a>
+</div>
+
+@using (Html.BeginForm("TransportCreate", "TransportOpt", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <!--name is what gets passed to the controller-->
+    <div>@Html.DisplayNameFor(project => Model.Name)</div>
+    <div><input type="text" required placeholder="Project Name Here" , name="ProjectName" /></div>
+    <br />
+    <div>@Html.DisplayNameFor(project => Model.Date)</div>
+    <div><input type="text" readonly value="@ViewBag.CurrentTime" , name="ProjectDate" /></div>
+    <br />
+    <div><input class="btn btn-success" type="file" name="excelfile" value="choose file" /></div>
+    <br />
+    <div><input class="btn btn-primary" type="submit" value="Upload Template" /></div>
+    <div></div>
+}

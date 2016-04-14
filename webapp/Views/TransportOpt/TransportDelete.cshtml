@@ -1,0 +1,26 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.TransProject
+
+<h2>Confirm Project Deletion</h2>
+
+<div>
+    <a href="TransportIndex" class="btn btn-success">Cancel Project Deletion</a>
+</div>
+<br />
+<div>
+    Project Name : @Html.DisplayFor(model => model.Name)
+</div>
+<br />
+<div>
+    Creation Date : @Html.DisplayFor(model => model.Date)
+</div>
+
+<div>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" value="Confirm Deletion of Project" class="btn btn-danger" />
+    }
+</div>
+<br />
+<br />
+<br />

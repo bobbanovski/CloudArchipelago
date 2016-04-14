@@ -1,0 +1,10 @@
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\bin\Release\SmartAdminMvc.Model.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\bin\Release\SmartAdminMvc.Model.pdb
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\obj\Release\SmartAdminMvc.Model.csprojResolveAssemblyReference.cache
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\obj\Release\SmartAdminMvc.Model.dll
+C:\Users\meh\Desktop\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\obj\Release\SmartAdminMvc.Model.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\bin\Release\SmartAdminMvc.Model.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\bin\Release\SmartAdminMvc.Model.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\obj\Release\SmartAdminMvc.Model.csprojResolveAssemblyReference.cache
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\obj\Release\SmartAdminMvc.Model.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.Model\obj\Release\SmartAdminMvc.Model.pdb

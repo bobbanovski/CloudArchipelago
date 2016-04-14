@@ -1,0 +1,76 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.Project
+@{
+    ViewBag.Title = "NewProjectDetails";
+}
+
+
+
+@Html.ActionLink("Return to Projects List", "NewProjectIndex", "NewProject")
+<h2>New Project Details</h2>
+<h3>ProjectID is: @Html.Raw(Model.ProjectID) </h3>
+
+@Html.ActionLink("Delete Project", "ProjectDelete", new { id = Model.ProjectID})
+
+@*@ SmartAdminMvc.ArchipelagoModel.ViewModels.CurrentProject cp = new SmartAdminMvc.ArchipelagoModel.ViewModels.CurrentProject();
+@ cp.CurrentProjectID = Model.ProjectID;*@
+<br />
+<h3>Project</h3>
+<table style="border:solid">
+    <tr>
+        <td>Project ID</td>
+        <td>Project Name</td>
+        <td>Creation Date</td>
+    </tr>
+    <tr>
+        <td>@Html.Raw(Model.ProjectID)</td>
+        <td>@Html.Raw(Model.ProjectName)</td>
+        <td>@Html.Raw(Model.ProjectDate)</td>
+    </tr>
+
+
+</table>
+
+
+<br />
+<h3>Components</h3>
+<table style="border:solid">
+    <tr>
+        <td>Component Name</td>
+        <td>Tonnes of Component</td>
+        <td>Air-Dried Moisture</td>
+        <td>Total Moisture</td>
+        <td>Ash</td>
+        <td>Calorific Value</td>
+        <td>Volatiles</td>
+        <td>Sulfur</td>
+        <td>FOB</td>
+    </tr>
+
+    @foreach (var item in Model.Components.ToList())
+    {
+        <tr>
+            
+            
+        </tr>
+    }
+</table>
+<br />
+@Html.ActionLink("Add Component", "NewProjectComponent", new { id=Model.ProjectID})
+<br />
+
+<h3>Vessels</h3>
+<table style="border:solid">
+    <tr>
+        
+    </tr>
+
+    @foreach (var item in Model.Vessels.ToList())
+    {
+        <tr>
+            
+        </tr>
+    }
+</table>
+<br />
+@Html.ActionLink("Add Vessel", "NewProjectVessel", new { id=Model.ProjectID})
+<br />

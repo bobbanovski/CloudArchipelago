@@ -1,0 +1,90 @@
+﻿@model SmartAdminMvc.Model.Component
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Component</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ComponentTonnesStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ComponentTonnesStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoistureAirDriedStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoistureAirDriedStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MoistureTotalStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MoistureTotalStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AshStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AshStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CalorificValueStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CalorificValueStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VolatileStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VolatileStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SulfurStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SulfurStart)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FOBStart)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FOBStart)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ComponentID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

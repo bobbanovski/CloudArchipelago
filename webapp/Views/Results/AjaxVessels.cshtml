@@ -1,0 +1,311 @@
+﻿@*@model SmartAdminMvc.ArchipelagoModel.Project
+
+@*C# Pre Processing*@
+@{ 
+    //Initialise all strings for graph input
+    string labelsPreString = "[";
+    string optionsPreString = "{";
+    optionsPreString += "scaleBeginAtZero: true," +  //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+            "scaleShowGridLines: true," +       //Boolean - Whether grid lines are shown across the chart
+            "scaleGridLineColor:" + '"' + "rgba(0,0,0,.2)" + '"' + "," +        //String - Colour of the grid lines
+            "scaleGridLineWidth: 1," +          //Number - Width of the grid lines
+            "barShowStroke: true," +            //Boolean - If there is a stroke on each bar
+            "barStrokeWidth: 1," +              //Number - Pixel width of the bar stroke
+            "barValueSpacing: 5," +             //Number - Spacing between each of the X value sets
+            "barDatasetSpacing: 1," +           //Number - Spacing between data sets within X values
+            "responsive: true,";                //Boolean - Re-draw chart on page resize
+    string optionsString = (optionsPreString.Substring(0, optionsPreString.Length - 1)) + '}';
+
+    string tonnesReqPreString = "";
+    string tonnesOptPreString = "";
+
+    string ashMaxPreString = "";
+    string ashOptPreString = "";
+
+    foreach (var vessel in Model.Vessels)
+    {
+        int Seed = 54238;
+        Random rdm = new Random(Seed);
+        float floatRdm = float.Parse(rdm.NextDouble().ToString());
+        labelsPreString += '"' + vessel.Name + '"' + ',';
+
+        tonnesReqPreString += vessel.TonnesMin.ToString() + ",";
+        tonnesOptPreString += (vessel.TonnesMin * floatRdm).ToString() + ",";
+        ashMaxPreString += vessel.AshMax.ToString() + ",";
+        ashOptPreString += (vessel.AshMax * floatRdm).ToString() + ",";
+    }
+    //Adjust chart strings
+    string labelString = (labelsPreString.Substring(0, labelsPreString.Length - 1)) + ']';
+    string tonnesReqString = tonnesReqPreString.Substring(0, tonnesReqPreString.Length - 1);
+    string tonnesOptString = tonnesOptPreString.Substring(0, tonnesOptPreString.Length - 1);
+    string ashMaxString = ashMaxPreString.Substring(0, ashMaxPreString.Length - 1);
+    string ashOptString = ashOptPreString.Substring(0, ashOptPreString.Length - 1);
+}
+
+<!-- Minimum Tonnes Graph-->
+<article class="col-xs-12 col-sm-6 col-md-6 col-lg-8 pull-right">
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false"
+         data-widget-editbutton="false" data-widget-sortable="false">
+        <!-- widget options:
+            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+            data-widget-colorbutton="false"
+            data-widget-editbutton="false"
+            data-widget-togglebutton="false"
+            data-widget-deletebutton="false"
+            data-widget-fullscreenbutton="false"
+            data-widget-custombutton="false"
+            data-widget-collapsed="true"
+            data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="glyphicon glyphicon-signal"></i> </span>
+            <h2>Minimum Tonnes Required</h2>
+
+        </header>
+
+        <!-- widget div-->
+        <div>
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+                <input class="form-control" type="text">
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body">
+                
+                <!-- chart area -->
+                <canvas id="tonnesChart" height="120" width="600"></canvas>
+
+            </div>
+            <!-- end widget content -->
+
+        </div>
+        <!-- end widget div -->
+
+    </div>
+</article> <!-- End Minimum Tonnes Graph-->
+
+<!-- Ash Graph-->
+<article class="col-xs-12 col-sm-6 col-md-6 col-lg-8 pull-right">
+
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget " id="wid-id-1" data-widget-colorbutton="false" data-widget-deletebutton="false"
+         data-widget-editbutton="false" data-widget-sortable="false">
+        <!-- widget options:
+            usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+            data-widget-colorbutton="false"
+            data-widget-editbutton="false"
+            data-widget-togglebutton="false"
+            data-widget-deletebutton="false"
+            data-widget-fullscreenbutton="false"
+            data-widget-custombutton="false"
+            data-widget-collapsed="true"
+            data-widget-sortable="false"
+
+        -->
+        <header>
+            <span class="widget-icon"> <i class="glyphicon glyphicon-signal"></i> </span>
+            <h2>Maximum Ash</h2>
+
+        </header>
+
+        <!-- widget div-->
+        <div>
+
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+                <input class="form-control" type="text">
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body">
+
+                <!-- chart area -->
+                <canvas id="ashChart" height="120" width="600"></canvas>
+
+            </div>
+            <!-- end widget content -->
+
+        </div>
+        <!-- end widget div -->
+
+    </div>
+</article> <!-- End Minimum Tonnes Graph-->
+
+@*<!--Vessels Table-->
+<article class="col-sm-12 col-lg-8 pull-right">
+    <!-- new widget -->
+    <div class="jarviswidget jarviswidget-color-darken " id="wid-id-2" data-widget-editbutton="false" data-widget-fullscreenbutton="true"
+         data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+        <header>
+            <span class="widget-icon"> <i class="fa fa-anchor"></i> </span>
+            <h2>Vessels</h2>
+        </header>
+
+        <div>
+            <div id="VesselDetails" class="widget-body no-padding">
+                <table id="dt_vessels" class="table table-striped table-bordered table-hover table.display" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Vessel Name</th>
+                            <th>Vessel Destination</th>
+                            <th>Maximum moisture</th>
+                            <th>Maximum Ash</th>
+                            <th>Minimum Calorific Amount</th>
+                            <th>Maximum Volatiles</th>
+                            <th>Maximum Sulfur</th>
+                            <th>Price per Tonne</th>
+                            <th>Minimum Tonnes</th>
+                            <th>Calorific Benchmark</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var vessel in Model.Vessels)
+                            {
+                                <tr>
+                                    <td>@vessel.Name</td>
+                                    <td>@vessel.Destination</td>
+                                    <td>@vessel.MoistureMax</td>
+                                    <td>@vessel.AshMax</td>
+                                    <td>@vessel.CalorificMin</td>
+                                    <td>@vessel.VolatileMax</td>
+                                    <td>@vessel.SulfurMax</td>
+                                    <td>@vessel.PricePerTonne</td>
+                                    <td>@vessel.TonnesMin</td>
+                                    <td>@vessel.CalorificBenchMark</td>
+                                </tr>
+                            }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</article>*@
+
+@*<script type="text/javascript">
+
+            // GLOBAL FUNCTIONS
+
+            $(document).ready(function () {
+                //Data Tables section
+                var responsiveHelper_project = undefined;
+                var responsiveHelper_vessels = undefined;
+                var responsiveHelper_components = undefined;
+
+                var breakpointDefinition = {
+                    tablet: 1024,
+                    phone: 480
+                };
+
+                $('#dt_projects').dataTable({
+                    "destroy": true,
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                        "t" +
+                        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        // Initialize the responsive datatables helper once for this table.
+                        if (!responsiveHelper_project) {
+                            responsiveHelper_project = new ResponsiveDatatablesHelper($('#dt_projects'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_project.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_project.respond();
+                    }
+                });
+
+                /* Vessels Table */
+                $('#dt_vessels').dataTable({
+                    "destroy": true,
+                    // Tabletools options:
+                    //   https://datatables.net/extensions/tabletools/button_options
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'T>r>" +
+                            "t" +
+                            "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-sm-6 col-xs-12'p>>",
+                    "oTableTools": {
+                        "aButtons": [
+                        "copy",
+                        "csv",
+                        "xls",
+                           {
+                               "sExtends": "pdf",
+                               "sTitle": "Optimised Data",
+                               "sPdfMessage": "Optimised Data pdf",
+                               "sPdfSize": "letter"
+                           },
+                           {
+                               "sExtends": "print",
+                               "sMessage": "Optimised data <i>(press Esc to close)</i>"
+                           }
+                        ],
+                        "sSwfPath": "/Scripts/plugin/datatables/swf/copy_csv_xls_pdf.swf"
+                    },
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        // Initialize the responsive datatables helper once.
+                        if (!responsiveHelper_vessels) {
+                            responsiveHelper_vessels = new ResponsiveDatatablesHelper($('#dt_vessels'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_vessels.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_vessels.respond();
+                    }
+                });
+                /* Vessels table */
+
+
+                //Charts
+
+                pageSetUp();
+
+                //Tonnes Chart
+                var barOptions = @Html.Raw(optionsString);
+                var labels = @Html.Raw(labelString);
+                var tonnesReq = @Html.Raw(Json.Encode(tonnesReqString).ToString());
+                var tonnesOpt = @Html.Raw(Json.Encode(tonnesOptString).ToString());
+                var datasetsString = '[{"label": "Vessel Requirements","fillColor": "rgba(220,220,220,0.5)", "strokeColor": "rgba(220,220,220,0.8)", "highlightFill": "rgba(220,220,220,0.75)", "highlightStroke": "rgba(220,220,220,1)", "data": [' + tonnesReq + '] } , {"label": "Optimised Vessel", "fillColor": "rgba(151,187,205,0.5)", "strokeColor": "rgba(151,187,205,0.8)", "highlightFill": "rgba(151,187,205,0.75)", "highlightStroke": "rgba(151,187,205,1)", "data": [' + tonnesOpt + '] }]'
+                var datasets = JSON.parse(datasetsString);
+
+                //    //String - A legend template
+                //    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+                var barData = {
+                    labels,
+                    datasets
+                };
+                // render Tonnes Chart
+                var ctx = document.getElementById("tonnesChart").getContext("2d");
+                var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+
+                //Ash Chart
+                var ashMax = @Html.Raw(Json.Encode(ashMaxString).ToString());
+                var ashOpt = @Html.Raw(Json.Encode(ashOptString).ToString());
+                var datasetsString = '[{"label": "Vessel Requirements","fillColor": "rgba(220,220,220,0.5)", "strokeColor": "rgba(220,220,220,0.8)", "highlightFill": "rgba(220,220,220,0.75)", "highlightStroke": "rgba(220,220,220,1)", "data": [' + ashMax + '] } , {"label": "Optimised Vessel", "fillColor": "rgba(151,187,205,0.5)", "strokeColor": "rgba(151,187,205,0.8)", "highlightFill": "rgba(151,187,205,0.75)", "highlightStroke": "rgba(151,187,205,1)", "data": [' + ashOpt + '] }]'
+                var datasets = JSON.parse(datasetsString);
+
+                var barData = {
+                    labels,
+                    datasets
+                };
+                //Render Ash Chart
+                var ctx = document.getElementById("ashChart").getContext("2d");
+                var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+
+                // END BAR CHART
+    })
+</script>*@
+
+@*}*@

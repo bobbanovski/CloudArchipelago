@@ -1,0 +1,277 @@
+﻿
+@{
+    ViewBag.Title = "Advanced Results";
+}
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> Results <span>> Optimised Results</span></h1>
+        </div>
+
+    </div>
+
+    <!-- widget grid -->
+    <section id="widget-grid" class="">
+
+        <!-- row -->
+        <div class="row">
+            <article class="col-sm-12 col-lg-4">
+                <!-- new widget -->
+                <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false" data-widget-togglebutton="false"
+                     data-widget-fullscreenbutton="false" data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+                    <!-- widget options:
+                    usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                    data-widget-colorbutton="false"
+                    data-widget-editbutton="false"
+                    data-widget-deletebutton="false"
+                    data-widget-fullscreenbutton="false"
+                    data-widget-custombutton="false"
+                    data-widget-collapsed="true"
+                    data-widget-sortable="false"
+                    -->
+                    <header>
+                        <span class="widget-icon"> <i class="glyphicon glyphicon-signal txt-color-darken"></i> </span>
+                        <h2>Project Details</h2>
+                    </header>
+
+                    <!-- widget div-->
+                    <div @*class="no-padding"*@>
+                        <!-- widget edit box -->
+                        @*<div class="jarviswidget-editbox"></div>*@
+                        <!-- end widget edit box -->
+
+                        <div class="widget-body no-padding">
+                            <!-- content -->
+                            <table id="dt_projects" class="table table-striped table-bordered table-hover table.display" width="100%">
+                                <thead>
+                                    <tr>
+                                        <th>Project ID</th>
+                                        <th>Project Name</th>
+                                        <th>Project Start Date</th>
+                                        <th>Get Details</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ProjectID</td>
+                                            <td>@item.ProjectName</td>
+                                            <td>@item.ProjectDate</td>
+                                            <td>@Ajax.ActionLink("->", "AjaxVessels", new { id = item.ProjectID }, new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "replaceMe", InsertionMode = InsertionMode.Replace, OnSuccess = "loadScriptAndInit" })</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                            <!-- end content -->
+                        </div>
+                    </div>
+                    <!-- end widget div -->
+                </div>
+                <!-- end widget -->
+
+            </article>
+
+            <div id="replaceMe">
+                <!--Partial View goes in here-->
+                @*<article class="col-xs-12 col-sm-6 col-md-6 col-lg-8">
+
+                        <!-- Widget ID (each widget will need unique ID)-->
+                        <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false"
+                             data-widget-editbutton="false" data-widget-sortable="false">
+                            <!-- widget options:
+                        usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
+
+                        data-widget-colorbutton="false"
+                        data-widget-editbutton="false"
+                        data-widget-togglebutton="false"
+                        data-widget-deletebutton="false"
+                        data-widget-fullscreenbutton="false"
+                        data-widget-custombutton="false"
+                        data-widget-collapsed="true"
+                        data-widget-sortable="false"
+
+                    -->
+                            <header>
+                                <span class="widget-icon"> <i class="glyphicon glyphicon-signal"></i> </span>
+                                <h2>Validation </h2>
+
+                            </header>
+
+                            <!-- widget div-->
+                            <div>
+
+                                <!-- widget edit box -->
+                                <div class="jarviswidget-editbox">
+                                    <!-- This area used as dropdown edit box -->
+                                    <input class="form-control" type="text">
+                                </div>
+                                <!-- end widget edit box -->
+                                <!-- widget content -->
+                                <div class="widget-body">
+
+                                    <!-- chart area -->
+                                    <canvas id="barChart" height="120" width="600"></canvas>
+
+                                </div>
+                                <!-- end widget content -->
+
+                            </div>
+                            <!-- end widget div -->
+
+                        </div>
+                    </article>
+
+                    <article class="col-sm-12 col-lg-8">
+                        <!-- new widget -->
+                        <div class="jarviswidget jarviswidget-color-darken" id="wid-id-1" data-widget-editbutton="false" data-widget-fullscreenbutton="true"
+                             data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+                            <header>
+                                <span class="widget-icon"> <i class="fa fa-anchor"></i> </span>
+                                <h2>Vessels</h2>
+                            </header>
+
+                            <div>
+                                <div id="VesselDetails" class="widget-body no-padding">
+                                    <table id="dt_vessels" class="table table-striped table-bordered table-hover table.display" width="100%">
+                                        <thead>
+                                            <tr>
+                                                
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @*foreach (var vessel in Model.Vessels)
+                                        {
+                                            <tr>
+                                                
+                                            </tr>
+                                        }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </article>*@
+            </div> <!-- End of partial view -->
+        </div>
+
+    </section> <!--End Widget Grid-->
+</div>
+
+@section pagespecific {
+
+<script type="text/javascript">
+
+            // GLOBAL FUNCTIONS
+
+    //Call to run other scripts
+    //gets dynamically generated script from controller
+            function loadScriptAndInit() {
+            $.getScript(
+            '<%= Url.Action("DynamicJava", "AdvResults") %>',
+            function () {
+                init();
+            });
+            }
+
+
+            $(document).ready(function () {
+                //Load javascript in controller
+                loadScriptAndInit();
+
+                //Data Tables section
+                var responsiveHelper_project = undefined;
+                var responsiveHelper_vessels = undefined;
+                var responsiveHelper_components = undefined;
+
+                var breakpointDefinition = {
+                    tablet: 1024,
+                    phone: 480
+                };
+
+                
+
+
+
+                //Projects Table
+
+                $('#dt_projects').dataTable({
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                        "t" +
+                        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        // Initialize the responsive datatables helper once for this table.
+                        if (!responsiveHelper_project) {
+                            responsiveHelper_project = new ResponsiveDatatablesHelper($('#dt_projects'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_project.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_project.respond();
+                    }
+                });
+
+                //Charts
+
+                pageSetUp();
+
+                var barOptions = {
+                    //Boolean - Whether the scale should start at zero, or an order of magnitude down from the lowest value
+                    scaleBeginAtZero: true,
+                    //Boolean - Whether grid lines are shown across the chart
+                    scaleShowGridLines: true,
+                    //String - Colour of the grid lines
+                    scaleGridLineColor: "rgba(0,0,0,.2)",
+                    //Number - Width of the grid lines
+                    scaleGridLineWidth: 1,
+                    //Boolean - If there is a stroke on each bar
+                    barShowStroke: true,
+                    //Number - Pixel width of the bar stroke
+                    barStrokeWidth: 1,
+                    //Number - Spacing between each of the X value sets
+                    barValueSpacing: 5,
+                    //Number - Spacing between data sets within X values
+                    barDatasetSpacing: 1,
+                    //Boolean - Re-draw chart on page resize
+                    responsive: true,
+                    //String - A legend template
+                    legendTemplate: "<ul class=\"<%=name.toLowerCase()%>-legend\"><% for (var i=0; i<datasets.length; i++){%><li><span style=\"background-color:<%=datasets[i].lineColor%>\"></span><%if(datasets[i].label){%><%=datasets[i].label%><%}%></li><%}%></ul>"
+                }
+
+                var barData = {
+                    labels: [], // Edit this
+                    datasets: [
+                       {
+                           label: "Vessel Requirements",
+                           fillColor: "rgba(220,220,220,0.5)",
+                           strokeColor: "rgba(220,220,220,0.8)",
+                           highlightFill: "rgba(220,220,220,0.75)",
+                           highlightStroke: "rgba(220,220,220,1)",
+                           data: [65, 59, 80, 81, 56, 55, 40, 60] // Edit this
+                       },
+                       {
+                           label: "Optimised Vessel",
+                           fillColor: "rgba(151,187,205,0.5)",
+                           strokeColor: "rgba(151,187,205,0.8)",
+                           highlightFill: "rgba(151,187,205,0.75)",
+                           highlightStroke: "rgba(151,187,205,1)",
+                           data: [28, 48, 40, 19, 86, 27, 90, 50] // Edit this
+                       }
+                    ]
+                };
+
+                // render chart
+                var ctx = document.getElementById("barChart").getContext("2d");
+                var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+
+                // END BAR CHART
+
+            })
+
+</script>
+}

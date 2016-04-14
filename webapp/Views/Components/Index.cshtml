@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SmartAdminMvc.Model.Component>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComponentTonnesStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoistureAirDriedStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MoistureTotalStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AshStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CalorificValueStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.VolatileStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SulfurStart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FOBStart)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ComponentTonnesStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoistureAirDriedStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MoistureTotalStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AshStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CalorificValueStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.VolatileStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SulfurStart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FOBStart)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ComponentID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ComponentID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ComponentID })
+        </td>
+    </tr>
+}
+
+</table>

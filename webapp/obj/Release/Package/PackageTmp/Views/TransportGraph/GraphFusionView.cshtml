@@ -1,0 +1,195 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.ViewModels.TransportViewModel
+
+@*C# Pre Processing*@
+@{
+    //Strings to be entered into CATEGORY STRING
+    string alb = "{"+'"'+"seriesname"+'"'+":"+'"'+"Albuquerque"+'"'+","+'"'+"renderas"+'"'+":"+'"'+"Area"+'"'+","+'"'+"data"+'"'+":"+"[";
+    string bal = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Baltimore" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string bos = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Boston" +'"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string chi = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Chicago" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string col = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Columbus" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string dal = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Dallas" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string den = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Denver" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string det = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Detroit" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string hou = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Houston" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string ind = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Indianna" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string kan = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Kansas" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string los = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Los Angeles" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string mia = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Miami" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string mon = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Montreal" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string por = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Portland" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string ral = "{" + '"' + "seriesname" + '"' + ":" + '"' + "Raleigh" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string stp = "{" + '"' + "seriesname" + '"' + ":" + '"' + "St Paul" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+    string san = "{" + '"' + "seriesname" + '"' + ":" + '"' + "San Francisco" + '"' + "," + '"' + "renderas" + '"' + ":" + '"' + "Area" + '"' + "," + '"' + "data" + '"' + ":" + "[";
+
+    
+    string categoryString = "["+"{"+'"'+"Category"+'"'+':'+"[";
+    string dataSetString = "[";
+
+    foreach(var state in Model.StateView)
+    {
+        //Get all of the units associated with this state
+        var albUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u =>u.SupplyNode== "Albuquerque").Single();
+        var balUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Baltimore").Single();
+        var bosUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Boston").Single();
+        var chiUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Chicago").Single();
+        var colUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Columbus").Single();
+        var dalUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Dallas").Single();
+        var denUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Denver").Single();
+        var detUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Detroit").Single();
+        var houUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Houston").Single();
+        var indUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Indianapollis").Single();
+        var kanUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Kansas City").Single();
+        var losUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Los Angelis").Single();
+        var miaUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Miami").Single();
+        var monUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Montreal").Single();
+        var porUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Portland").Single();
+        var ralUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "Raleigh").Single();
+        var stpUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "St Paul").Single();
+        var sanUnit = state.Units.Where(u => u.DemandNode == state.Name).Where(u => u.SupplyNode == "San Francisco").Single();
+
+        categoryString += "{" + '"' + "label" + '"' + ':' + '"' + state.Name + '"' + "}" + ",";
+
+        alb += "{" + '"' + "value" + '"' + ":" + '"' + albUnit.Supplied + '"' + "}" + ",";
+        bal += "{" + '"' + "value" + '"' + ":" + '"' + balUnit.Supplied + '"' + "}" + ",";
+        bos += "{" + '"' + "value" + '"' + ":" + '"' + bosUnit.Supplied + '"' + "}" + ",";
+        chi += "{" + '"' + "value" + '"' + ":" + '"' + chiUnit.Supplied + '"' + "}" + ",";
+        col += "{" + '"' + "value" + '"' + ":" + '"' + colUnit.Supplied + '"' + "}" + ",";
+        dal += "{" + '"' + "value" + '"' + ":" + '"' + dalUnit.Supplied + '"' + "}" + ",";
+        den += "{" + '"' + "value" + '"' + ":" + '"' + denUnit.Supplied + '"' + "}" + ",";
+        det += "{" + '"' + "value" + '"' + ":" + '"' + detUnit.Supplied + '"' + "}" + ",";
+        hou += "{" + '"' + "value" + '"' + ":" + '"' + houUnit.Supplied + '"' + "}" + ",";
+        ind += "{" + '"' + "value" + '"' + ":" + '"' + indUnit.Supplied + '"' + "}" + ",";
+        kan += "{" + '"' + "value" + '"' + ":" + '"' + kanUnit.Supplied + '"' + "}" + ",";
+        los += "{" + '"' + "value" + '"' + ":" + '"' + losUnit.Supplied + '"' + "}" + ",";
+        mia += "{" + '"' + "value" + '"' + ":" + '"' + miaUnit.Supplied + '"' + "}" + ",";
+        mon += "{" + '"' + "value" + '"' + ":" + '"' + monUnit.Supplied + '"' + "}" + ",";
+        por += "{" + '"' + "value" + '"' + ":" + '"' + porUnit.Supplied + '"' + "}" + ",";
+        ral += "{" + '"' + "value" + '"' + ":" + '"' + porUnit.Supplied + '"' + "}" + ",";
+        stp += "{" + '"' + "value" + '"' + ":" + '"' + porUnit.Supplied + '"' + "}" + ",";
+        san += "{" + '"' + "value" + '"' + ":" + '"' + porUnit.Supplied + '"' + "}" + ",";
+    }
+    categoryString = categoryString.Substring(0, categoryString.Length - 1) + "]" + "}" + "]";
+
+    alb = alb.Substring(0, alb.Length - 1) + "]" + "}" + ",";
+    bal = bal.Substring(0, bal.Length - 1) + "]" + "}" + ",";
+    bos = bos.Substring(0, bos.Length - 1) + "]" + "}" + ",";
+    chi = chi.Substring(0, chi.Length - 1) + "]" + "}" + ",";
+    col = col.Substring(0, col.Length - 1) + "]" + "}" + ",";
+    dal = dal.Substring(0, dal.Length - 1) + "]" + "}" + ",";
+    den = den.Substring(0, den.Length - 1) + "]" + "}" + ",";
+    det = det.Substring(0, det.Length - 1) + "]" + "}" + ",";
+    hou = hou.Substring(0, hou.Length - 1) + "]" + "}" + ",";
+    ind = ind.Substring(0, ind.Length - 1) + "]" + "}" + ",";
+    kan = kan.Substring(0, kan.Length - 1) + "]" + "}" + ",";
+    los = los.Substring(0, los.Length - 1) + "]" + "}" + ",";
+    mia = mia.Substring(0, mia.Length - 1) + "]" + "}" + ",";
+    mon = mon.Substring(0, mon.Length - 1) + "]" + "}" + ",";
+    por = por.Substring(0, por.Length - 1) + "]" + "}" + ",";
+    ral = ral.Substring(0, ral.Length - 1) + "]" + "}" + ",";
+    stp = stp.Substring(0, stp.Length - 1) + "]" + "}" + ",";
+    san = san.Substring(0, san.Length - 1) + "]" + "}";
+
+    dataSetString += alb + bal + bos + chi + col + dal + den + det + hou + ind + kan + los + mia + mon + por + ral + stp + san + "]";
+}
+
+<head>
+    <script type="text/javascript" src="~/fusioncharts/fusioncharts.js"></script>
+    <script type="text/javascript" src="~/fusioncharts/themes/fusioncharts.theme.fint.js"></script>
+</head>
+
+<!-- Albuquerque Graph-->
+<article class="col-xs-12 col-sm-6 col-md-6 col-lg-8 pull-right">
+    <!-- Widget ID (each widget will need unique ID)-->
+    <div class="jarviswidget jarviswidget-color-darken" id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false"
+         data-widget-editbutton="false" data-widget-sortable="false">
+        <header>
+            <span class="widget-icon"> <i class="glyphicon glyphicon-signal"></i> </span>
+            <h2>Transport Optimisation - Summary of deliveries</h2>
+        </header>
+        <!-- widget div-->
+        <div>
+            <!-- widget edit box -->
+            <div class="jarviswidget-editbox">
+                <!-- This area used as dropdown edit box -->
+                <input class="form-control" type="text">
+            </div>
+            <!-- end widget edit box -->
+            <!-- widget content -->
+            <div class="widget-body">
+                <!-- chart area -->
+                <div id="chartContainer">Loading...</div>
+            </div>
+            <!-- end widget content -->
+        </div>
+        <!-- end widget div -->
+    </div>
+</article> <!-- Alb Graph-->
+
+
+<script type="text/javascript">
+    var chartString = '{"caption": "Delivery to each city. Legend - source cities","showvalues": "0","plotgradientcolor": "","formatnumberscale": "0","showplotborder": "0","palettecolors": "#EED17F,#97CBE7,#074868,#B0D67A,#2C560A,#DD9D82,#ff9966,#666699,#9999ff,#ff6666,#99ff66,#66ffcc","canvaspadding": "0","bgcolor": "FFFFFF","showalternatehgridcolor": "0","divlinecolor": "CCCCCC","showcanvasborder": "0","legendborderalpha": "0","legendshadow": "0","interactivelegend": "0","showpercentvalues": "1","showsum": "1","canvasborderalpha": "0","showborder": "0"}';
+    var chart = JSON.parse(chartString);
+    
+    var categories = @Html.Raw(categoryString)
+    var dataset = @Html.Raw(dataSetString)
+        FusionCharts.ready(function () {
+            
+
+            //From basic charts
+            var revenueChart = new FusionCharts({
+                "type": "stackedcolumn2d",
+                "renderAt": "chartContainer",
+                "width": "900",
+                "height": "500",
+                "dataFormat": "json",
+                "dataSource": { chart, categories, dataset
+            
+                //"chart": {
+                //    "caption": "Visits from search engines",
+                //    "showvalues": "0",
+                //    "plotgradientcolor": "",
+                //    "formatnumberscale": "0",
+                //    "showplotborder": "0",
+                //    "palettecolors": "#EED17F,#97CBE7,#074868,#B0D67A,#2C560A,#DD9D82",
+                //    "canvaspadding": "0",
+                //    "bgcolor": "FFFFFF",
+                //    "showalternatehgridcolor": "0",
+                //    "divlinecolor": "CCCCCC",
+                //    "showcanvasborder": "0",
+                //    "legendborderalpha": "0",
+                //    "legendshadow": "0",
+                //    "interactivelegend": "0",
+                //    "showpercentvalues": "1",
+                //    "showsum": "1",
+                //    "canvasborderalpha": "0",
+                //    "showborder": "0"
+                    //}
+                    
+                //"categories": [{"category": [{"label": "Jan"},{"label": "Feb"},{"label": "Mar"},{"label": "Apr"},{"label": "May"},{"label": "Jun"},
+                //            {"label": "Jul"},{"label": "Aug"},{"label": "Sep"},{"label": "Oct"},{"label": "Nov"},
+                //              {"label": "Dec"}]}],
+            
+                   //"dataset": [   {"seriesname": "Google","renderas": "Area","data": [{"value": "5040"},{"value": "4794"},{"value": "5026"},
+                   //         {"value": "5341"},{"value": "4800"},{"value": "4507"},{"value": "5701"},{"value": "4671"},
+                   //         {"value": "4980"},{"value": "4041"},{"value": "3813"},{"value": "3691"}]},
+
+                   //            {"seriesname": "Yahoo","renderas": "Area","data": [{"value": "1200"},{"value": "1124"},
+                   //         {"value": "1006"},{"value": "921"},{"value": "1500"},{"value": "1007"},{"value": "921"},
+                   //         {"value": "971"},{"value": "1080"},{"value": "1041"},{"value": "1113"},{"value": "1091"}]},
+
+                   //            {"seriesname": "MSN","renderas": "Area","data": [{"value": "400"},{"value": "524"},
+                   //         {"value": "606"},{"value": "421"},{"value": "500"},{"value": "707"},{"value": "621"},{"value": "471"},{"value": "680"},{"value": "441"},
+                   //         {"value": "713"},{"value": "491"}]},
+
+                   //            {"seriesname": "Others","renderas": "Area","data": [{"value": "765"},{"value": "571"},
+                   //         {"value": "532"},{"value": "411"},{"value": "500"},{"value": "407"},{"value": "421"},
+                   //         {"value": "551"},{"value": "600"},{"value": "541"},{"value": "613"},{"value": "591"}]}    ]
+                     }
+            });
+            revenueChart.render();
+        })
+</script>
+
+
+

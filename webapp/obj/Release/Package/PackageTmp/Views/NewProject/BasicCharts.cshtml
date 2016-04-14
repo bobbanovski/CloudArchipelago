@@ -1,0 +1,190 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.ViewModels.BasicChartsView
+@{
+    ViewBag.Title = "MacroView";
+}
+<head>
+    <script src="~/FusionCharts/fusioncharts.js"></script>
+    <script src="~/FusionCharts/fusioncharts.charts.js"></script>
+    <script src="~/FusionCharts/themes/fusioncharts.theme.fint.js"></script>
+    <script src="~/FusionCharts/themes/fusioncharts.theme.ocean.js"></script>
+</head>
+
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
+            <h1 class="page-title txt-color-blueDark"><i class="fa-fw fa fa-home"></i> MacroView <span>>  Results</span></h1>
+        </div>
+    </div>
+
+    <div id="chartContainer">
+        Chart loading...
+    </div>
+
+    <div>
+        <p>
+            @*@Html.Raw(ViewBag.dataString)*@
+        </p>
+    </div>
+    <h2>Chart.js</h2>
+    <div>
+        @Html.Raw(ViewBag.optionsString)
+    </div>
+
+    <div class="row">
+        <section id="widget-grid">
+            <article class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                <div class="jarviswidget" id="wid-id-0" data-widget-colorbutton="false" data-widget-deletebutton="false"
+                     data-widget-editbutton="false" data-widget-sortable="false">
+                    <header>
+                        <span class="widget-icon"> <i class="glyphicon glyphicon-signal"></i> </span>
+                        <h2>Validation </h2>
+
+                    </header>
+                    <div>
+                        <div class="widget-body">
+                            Chart loading...
+                            <canvas id="barChart" height="120" width="600"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </div>
+</div>
+<p>@Model.optionsView</p>
+@section pagespecific {
+
+    <script type="text/javascript">
+        //pageSetUp();
+
+
+
+        $(document).ready(function () {
+            var breakpointDefinition = {
+                tablet: 1024,
+                phone: 480
+            };
+
+            pageSetUp();
+
+            var barOptions = @*JSON.parse(@Model.optionsView);*@ @Html.Raw(ViewBag.optionsString);
+            var labels = JSON.parse(@Html.Raw(Json.Encode(ViewBag.labelString)));
+            //var optimised = JSON.parse(Html.Raw(Json.Encode(ViewBag.optimisedString)));
+
+            var requiredData = (@Html.Raw(Json.Encode(ViewBag.requiredString))).toString();
+            var optimisedData = (@Html.Raw(Json.Encode(ViewBag.optimisedString))).toString();
+
+            var required = '[{"label": "Vessel Requirements","fillColor": "rgba(220,220,220,0.5)", "strokeColor": "rgba(220,220,220,0.8)", "highlightFill": "rgba(220,220,220,0.75)", "highlightStroke": "rgba(220,220,220,1)", "data": [' + requiredData + '] } , {"label": "Optimised Vessel", "fillColor": "rgba(151,187,205,0.5)", "strokeColor": "rgba(151,187,205,0.8)", "highlightFill": "rgba(151,187,205,0.75)", "highlightStroke": "rgba(151,187,205,1)", "data": [' + optimisedData + '] }]'
+            var datasets = JSON.parse(required);
+            //alert(required);
+
+            var barData = {
+                labels, datasets
+                //datasets
+                //    : [//required,
+                //   {
+
+                //       label: "Vessel Requirements",
+                //       fillColor: "rgba(220,220,220,0.5)",
+                //       strokeColor: "rgba(220,220,220,0.8)",
+                //       highlightFill: "rgba(220,220,220,0.75)",
+                //       highlightStroke: "rgba(220,220,220,1)",
+                //       //data = JSON.parse(Html.Raw(Json.Encode(ViewBag.optimisedString)));
+                //       data: [65, 59, 80, 81, 56, 55, 40,4,4,4,4,4,4,4,4,4,4,4,4,4] // Edit this
+                //       //
+                //    },
+                //   {
+                //       label: "Optimised Vessel",
+                //       fillColor: "rgba(151,187,205,0.5)",
+                //       strokeColor: "rgba(151,187,205,0.8)",
+                //       highlightFill: "rgba(151,187,205,0.75)",
+                //       highlightStroke: "rgba(151,187,205,1)",
+                //       data: [28, 48, 40, 19, 86, 27, 90,4,4,4,4,4,4,4,4,4,4,4,4,4] // Edit this
+
+                //   }
+                //]
+            };
+
+            // render chart
+            var ctx = document.getElementById("barChart").getContext("2d");
+            var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+
+
+            //var textString =
+            //    '[{"FirstName": "John", "Lastname": "Doe"}, {"FirstName": "Anna", "Lastname": "Smith"}, {"FirstName": "Jane", "Lastname": "Doe"} ]'
+
+            //var employees = JSON.parse(textString);
+            //alert(employees[1].FirstName);
+
+            //var textString = '{ "employees" : [' +
+            //'{"FirstName": "John", "Lastname": "Doe"},' +
+            //'{"FirstName": "Anna", "Lastname": "Smith"},' +
+            //'{"FirstName": "Jane", "Lastname": "Doe"} ]}'
+            //var obj = JSON.parse(textString);
+            //alert(obj.employees[0].FirstName);
+
+
+
+            //var chartString = '{ "chart" : [' +
+            //    '{"caption": "Monthly revenue for last year"},' +
+            //    '{"subCaption": "Harrys SuperMart"},' +
+            //    '{"xAxisName": "Month"},' +
+            //    '{"yAxisName": "Revenues"},' +
+            //    '{"theme": "fint"} ]}'
+            //var objChart = JSON.parse(chartString);
+            //alert(objChart.chart[0].caption);
+            //$.each(objChart, function (i, item) {
+            //        alert(item.Id + ': ' + item.Name);
+            //        });
+
+            FusionCharts.ready(function () {
+                var chartString = '{"caption": "Minimum Tonnes for Vessel", "subCaption": "subCaption", "xAxisName": "Vessel", "yAxisName": "Tonnes", "theme": "ocean"}';
+                var chart = JSON.parse(chartString);
+
+                var data = JSON.parse(@Html.Raw(Json.Encode(ViewBag.dataString)));
+
+                var vesselChart = new FusionCharts({
+                    "type": "column2d",
+                    "renderAt": "chartContainer",
+                    "width": "500",
+                    "height": "300",
+                    "dataFormat": "json",
+                    "dataSource": { chart, data }
+                });
+                vesselChart.render();
+            })
+
+
+            //Basic JSON Intro
+            //Single Variable
+            //var x = '{"Id":"Yeah it works!"}';
+            //var k = JSON.parse(x);
+            //alert(k.Id.toString());
+
+            //Array
+            //var x = '[{"Id":"test"}, {"Id":"two"}, {"Id":3}, {"Id":4}]'
+            //var k = JSON.parse(x);
+            //alert(k[1].Id.toString());
+            //$.each(k, function (i, item) {
+            //    alert(item.Id)
+            //});
+
+            //Single Object, called from server (services)
+            //var x = '{"Id":1 , "Name": "Robbo"}'
+            //var k = JSON.parse(x);
+            //alert(k.Id.toString() + ': ' + k.Name);
+
+            //List of objects
+            //Retrieve single value
+            //var x = '[{"Id":1,"Name":"Manzoor"},{"Id":2,"Name":"Rick"},{"Id":3,"Name":"Robbo"}]'
+            //var k = JSON.parse(x);
+            //alert(k[1].Id.toString() + ': ' + k[1].Name);
+
+            //For each loop
+            //$.each(k, function (i, item) {
+            //    alert(item.Id + ': ' + item.Name);
+            //    });
+        });
+    </script>
+}

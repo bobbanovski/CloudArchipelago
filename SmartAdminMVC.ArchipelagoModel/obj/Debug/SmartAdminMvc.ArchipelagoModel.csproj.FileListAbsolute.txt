@@ -1,0 +1,15 @@
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\bin\Debug\SmartAdminMvc.ArchipelagoModel.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\bin\Debug\SmartAdminMvc.ArchipelagoModel.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\obj\Debug\SmartAdminMvc.ArchipelagoModel.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\obj\Debug\SmartAdminMvc.ArchipelagoModel.pdb
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\bin\Debug\Excel.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\Archipelago\Archipelago4\Working\SmartAdminMvc.ArchipelagoModel\bin\Debug\Excel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\bin\Debug\SmartAdminMvc.ArchipelagoModel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\bin\Debug\SmartAdminMvc.ArchipelagoModel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\bin\Debug\Excel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\bin\Debug\Excel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\obj\Debug\SmartAdminMvc.ArchipelagoModel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\obj\Debug\SmartAdminMvc.ArchipelagoModel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.ArchipelagoModel\obj\Debug\SmartAdminMvc.ArchipelagoModel.csprojResolveAssemblyReference.cache

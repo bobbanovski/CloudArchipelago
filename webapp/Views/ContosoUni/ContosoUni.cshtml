@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "ContosoUni";
+}
+
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-5">
+            <h1 class="page-title txt-color-blueDark semi-bold"><i class="fa-fw fa fa-graduation-cap"></i> Contoso University <span>>  Database interactions mediated by Entity Framework</span></h1>
+        </div>
+    </div>
+
+    <section id="widget-grid">
+        <div class="row">
+            <div class="col-md-4 col-lg-4">
+                <div class="well">
+                    <h1 class="semi-bold">Contoso University</h1>
+                    <hr />
+                    <p>Contoso University is a significant database building and interactivity project that demonstrates most aspects of building
+                    a business grade web application - from design of the database to the final publication of the application to Windows Azure.</p>
+                    <p></p>
+                    <br />
+                    <a href="@Url.Action("Index","Home",new { Area = "ContosoUniversity" })">Go to University <i class="fa fa-send"></i></a>
+                </div>
+            </div>
+            <div class="well col-md-8 col-lg-8">
+                <h1 class="semi-bold">A database implemented code-first through Entity Framework</h1>
+                <hr />
+                    <div class="col-md-1 col-lg-1"></div>
+                    <div class="col-md-6 col-lg-6">
+                        <img src="~/Content/img/demo/ContosoEF.JPG" />
+                    </div>
+            </div>
+
+        </div>
+    </section>
+</div>
+

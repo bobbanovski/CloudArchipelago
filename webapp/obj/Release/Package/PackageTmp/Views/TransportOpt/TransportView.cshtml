@@ -1,0 +1,73 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.ViewModels.TransportViewModel
+
+<!--Units-->
+<article class="col-sm-12 col-lg-8 pull-right">
+    <!-- new widget -->
+    <div class="jarviswidget jarviswidget-color-darken " id="wid-id-100" data-widget-editbutton="false" data-widget-fullscreenbutton="true"
+         data-widget-colorbutton="false" data-widget-deletebutton="false" data-widget-sortable="false">
+        <header>
+            <span class="widget-icon"> <i class="fa fa-signal"></i> </span>
+            <h2>Optimised Table</h2>
+        </header>
+
+        <div>
+            <div id="OptimisedResults" class="widget-body no-padding">
+                <table id="dt_transport" class="table table-striped table-bordered table-hover table.display" width="100%">
+                    <thead>
+                        <tr>
+                            <th>City</th>
+                            <th>AL</th>
+                            <th>BA</th>
+                            <th>BO</th>
+                            <th>CH</th>
+                            <th>CO</th>
+                            <th>DA</th>
+                            <th>DEN</th>
+                            <th>DET</th>
+                            <th>HO</th>
+                            <th>IN</th>
+                            <th>KA</th>
+                            <th>LA</th>
+                            <th>MI</th>
+                            <th>MON</th>
+                            <th>PO</th>
+                            <th>RA</th>
+                            <th>SP</th>
+                            <th>SF</th>
+                            <th>supply</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var city in Model.CitieView)
+                        {
+                            <tr>
+                                <td>@city.Name</td>
+                                @foreach (var unit in city.Unit)
+                                {
+                                    if (unit.Project == city.TransProjectID) { 
+                                    <td>@unit.Supplied</td>
+                                    }
+                                }
+                                <td>@city.Capacity</td>
+                            </tr>
+                        }
+                        <tr>
+                            <td class="semi-bold">Demand</td>
+                            @foreach(var state in Model.StateView)
+                            {
+                                <td>@state.Demand</td>
+                            }
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</article>
+
+<script type="text/javascript">
+
+            // GLOBAL FUNCTIONS
+
+            
+</script>

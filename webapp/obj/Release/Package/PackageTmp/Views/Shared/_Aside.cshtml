@@ -1,0 +1,84 @@
+﻿    <!-- Left panel : Navigation area -->
+<!-- Note: This width of the aside area can be adjusted through LESS variables -->
+<aside id="left-panel">
+
+    <!-- User info -->
+    @{ Html.RenderPartial("_CurrentUser"); }
+    <!-- end user info -->
+     
+    <!--NAVIGATION-->
+    <nav>
+        <ul>
+            <li class="@Html.RouteIf("index", "active")">
+                <a href="@Url.Action("index", "home")" title="Welcome to the archipelago"><i class="fa fa-lg fa-fw fa-home"></i>
+                <span class="menu-item-parent">Dashboard</span></a>
+            </li>
+            
+            <li class="@Html.RouteIf("transportIndex", "active")">
+                <a href="@Url.Action("transportIndex", "transportOpt")" title="Upload an Excel template into a database. The optimum supply is then calculated via Windows Solver Foundation">
+                    <i class="fa fa-lg fa-fw fa-truck "></i>
+                    <span class="menu-item-parent">Transport Optimisation</span>
+                </a>
+            </li>
+
+            <li class="@Html.RouteIf("TransGraphIndex", "active")">
+                <a href="#" )" title="Display the results of the transport optimisation problem in chart form"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i> <span class="menu-item-parent">Graphical Display</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("TransGraphJS", "active")">
+                        <a href="@Url.Action("TransGraphJS", "TransportGraph")" title="Transport Optimisation Problem visualised with ChartJS">ChartJS</a>
+                        <!--<span class="menu-item-parent">-->
+                    </li>
+                    <li class="@Html.RouteIf("TransGraphFusion", "active")">
+                        <a href="@Url.Action("TransGraphFusion", "TransportGraph")" title="Transport Optimisation Problem visualised with Fusion Charts">Fusion Charts</a>
+                    </li>
+                    @*<li class="@Html.RouteIf("FusionTest", "active")">
+                        <a href="@Url.Action("FusionTest", "TransportGraph")" title="Fusion Charts">Fusion test</a>
+                    </li>*@
+                </ul>
+            </li>
+
+            <li class="@Html.RouteIf("contosouni", "active")">
+                <a href="@Url.Action("contosouni", "ContosoUni")" title="A demonstration of advanced database techniques using entity framework">
+                    <i class="fa fa-lg fa-fw fa-graduation-cap"></i>
+                    <span class="menu-item-parent">Contoso University</span>
+                </a>
+            </li>
+    
+            <li class="@Html.RouteIf("TableauIndex", "active")">
+                <a href="#")" title="Tableau dashboards allow fluent display of key relations between data"><i class="fa fa-lg fa-fw fa-signal"></i> <span class="menu-item-parent">Tableau Dashboards</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("TableauQuadrant", "active")">
+                        <a href="@Url.Action("TableauQuadrant", "TableauDash")" title="Startup Quadrant">Startup Quadrant</a>
+                    <!--<span class="menu-item-parent">-->
+                    </li>
+                    <li class="@Html.RouteIf("TableauBank", "active")">
+                        <a href="@Url.Action("TableauBank", "TableauDash")" title="UK Bank">UK Bank</a>
+                    </li>
+                    <li class="@Html.RouteIf("TableauCoal", "active")">
+                        <a href="@Url.Action("TableauCoal", "TableauDash")" title="Coal Terminal Analysis">Coal Terminal</a>
+                    </li>
+                </ul>
+            </li>
+            @*<li class="@Html.RouteIf("TableauIndex", "active")">
+                <a href="@Url.Action("TableauIndex", "TableauDash")" title="Tableau dashboards allow fluent display of key relations between data">
+                    <i class="fa fa-lg fa-fw fa-signal"></i>
+                    <span class="menu-item-parent">Tableau Dashboards</span>
+                </a>
+            </li>*@
+
+            @*<li class="@Html.RouteIf("JScript", "active")">
+                <a href="#" )" title="Tableau dashboards allow fluent display of key relations between data"><i class="fa fa-lg fa-fw fa-dollar fa-spin"></i> <span class="menu-item-parent">Javascript</span></a>
+                <ul>
+                    <li class="@Html.RouteIf("JScriptBackGround", "active")">
+                        <a href="@Url.Action("JScriptBackGround", "JS")" title="JavaScript running in the background">Javascript</a>
+                    </li>
+                </ul>       
+            </li>*@
+        
+    </nav>
+    <span class="minifyme" data-action="minifyMenu">
+        <i class="fa fa-arrow-circle-left hit"></i>
+    </span>
+
+</aside>
+<!-- END NAVIGATION -->

@@ -1,0 +1,11 @@
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\SmartAdminMvc.TransSolver.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\SmartAdminMvc.TransSolver.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\Microsoft.Solver.Foundation.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\SmartAdminMvc.ArchipelagoModel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\Excel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\SmartAdminMvc.ArchipelagoModel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\bin\Debug\Excel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\obj\Debug\SmartAdminMvc.TransSolver.csprojResolveAssemblyReference.cache
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\obj\Debug\SmartAdminMvc.TransSolver.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMvc.TransSolver\obj\Debug\SmartAdminMvc.TransSolver.pdb

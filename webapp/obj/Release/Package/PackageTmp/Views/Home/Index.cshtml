@@ -1,0 +1,177 @@
+﻿<!-- MAIN CONTENT -->
+<div id="content">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-6">
+            <h1 class="page-title txt-color-blueDark semi-bold"><i class="fa-fw fa fa-cloud"></i> Robert Coleman <span>> Welcome to the Archipelago</span></h1>
+        </div>
+    </div>
+    
+    <!-- widget grid -->
+    <section id="widget-grid">
+        <div class="row">
+            <div class="col-md-6 col-lg-6">
+                <div class="well">
+                    <h1 class="semi-bold">Robert Coleman</h1>
+                    <hr />
+                    <ul>
+                        <li>Process Optimisation</li>
+                        <li>Web Development</li>
+                        <li>Mathematical programming - Matlab</li>
+                        <li>Programming - C#, python</li>
+                        <li>Data Visualisation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end widget grid -->
+
+</div>
+<!-- END MAIN CONTENT -->
+@section pagespecific {
+    @*<script src="~/scripts/jquery-2.2.0.min.js",></script>*@
+    
+
+    <script type="text/javascript">
+
+            // DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+            $(document).ready(function () {
+                //Data Tables section
+                var responsiveHelper_project = undefined;
+                var responsiveHelper_vessels = undefined;
+                var responsiveHelper_components = undefined;
+
+                var breakpointDefinition = {
+                    tablet: 1024,
+                    phone: 480
+                };
+
+                //Projects Table
+                $('#dt_projects').dataTable({
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                        "t" +
+                        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        // Initialize the responsive datatables helper once for this table.
+                        if (!responsiveHelper_project) {
+                            responsiveHelper_project = new ResponsiveDatatablesHelper($('#dt_projects'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_project.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_project.respond();
+                    }
+                });
+
+                //Vessels Table
+                $('#dt_vessels').dataTable({
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                        "t" +
+                        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        if (!responsiveHelper_vessels) {
+                            responsiveHelper_vessels = new ResponsiveDatatablesHelper($('#dt_vessels'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_vessels.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_vessels.respond();
+                    }
+                });
+
+                //Components Table
+                $('#dt_components').dataTable({
+                    "sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>" +
+                        "t" +
+                        "<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
+                    "autoWidth": true,
+                    "preDrawCallback": function () {
+                        if (!responsiveHelper_components) {
+                            responsiveHelper_components = new ResponsiveDatatablesHelper($('#dt_components'), breakpointDefinition);
+                        }
+                    },
+                    "rowCallback": function (nRow) {
+                        responsiveHelper_components.createExpandIcon(nRow);
+                    },
+                    "drawCallback": function (oSettings) {
+                        responsiveHelper_components.respond();
+                    }
+                });
+            })
+
+    </script>
+}
+
+            @*/*
+            * TODO: add a way to add more todo's to list
+            */
+
+            // initialize sortable
+            //$(function () {
+            //    $("#sortable1, #sortable2").sortable({
+            //        handle: '.handle',
+            //        connectWith: ".todo",
+            //        update: countTasks
+            //    }).disableSelection();
+            //});
+
+            // check and uncheck
+            //$('.todo .checkbox > input[type="checkbox"]').click(function () {
+            //    var $this = $(this).parent().parent().parent();
+
+            //    if ($(this).prop('checked')) {
+            //        $this.addClass("complete");
+
+            //        // remove this if you want to undo a check list once checked
+            //        //$(this).attr("disabled", true);
+            //        $(this).parent().hide();
+
+            //        // once clicked - add class, copy to memory then remove and add to sortable3
+            //        $this.slideUp(500, function () {
+            //            $this.clone().prependTo("#sortable3").effect("highlight", {}, 800);
+            //            $this.remove();
+            //            countTasks();
+            //        });
+            //    } else {
+            //        // insert undo code here...
+            //    }
+
+            //})
+            // count tasks
+            //function countTasks() {
+
+            //    $('.todo-group-title').each(function () {
+            //        var $this = $(this);
+            //        $this.find(".num-of-tasks").text($this.next().find("li").size());
+            //    });
+
+            //}
+
+
+
+            // setup control widget
+            //var updateInterval = 1500;
+            //$("#updating-chart").val(updateInterval).change(function () {
+
+            //    var v = $(this).val();
+            //    if (v && !isNaN(+v)) {
+            //        updateInterval = +v;
+            //        $(this).val("" + updateInterval);
+            //    }
+
+            //});
+
+
+
+            /* hide default buttons */
+            //$('.fc-header-right, .fc-header-center').hide();
+        })
+    </script>
+}*@

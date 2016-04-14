@@ -1,0 +1,104 @@
+﻿@model SmartAdminMvc.ArchipelagoModel.Project
+@{
+    ViewBag.Title = "NewProjectDetails";
+}
+
+
+
+@Html.ActionLink("Return to Projects List", "NewProjectIndex", "NewProject")
+<h2>New Project Details</h2>
+<h3>ProjectID is: @Html.Raw(Model.ProjectID) </h3>
+
+@Html.ActionLink("Delete Project", "ProjectDelete", new { id = Model.ProjectID})
+
+@*@ SmartAdminMvc.ArchipelagoModel.ViewModels.CurrentProject cp = new SmartAdminMvc.ArchipelagoModel.ViewModels.CurrentProject();
+@ cp.CurrentProjectID = Model.ProjectID;*@
+<br />
+<h3>Project</h3>
+<table style="border:solid">
+    <tr>
+        <td>Project ID</td>
+        <td>Project Name</td>
+        <td>Creation Date</td>
+    </tr>
+    <tr>
+        <td>@Html.Raw(Model.ProjectID)</td>
+        <td>@Html.Raw(Model.ProjectName)</td>
+        <td>@Html.Raw(Model.ProjectDate)</td>
+    </tr>
+
+
+</table>
+
+
+<br />
+<h3>Components</h3>
+<table style="border:solid">
+    <tr>
+        <td>Component Name</td>
+        <td>Tonnes of Component</td>
+        <td>Air-Dried Moisture</td>
+        <td>Total Moisture</td>
+        <td>Ash</td>
+        <td>Calorific Value</td>
+        <td>Volatiles</td>
+        <td>Sulfur</td>
+        <td>FOB</td>
+    </tr>
+
+    @foreach (var item in Model.Components.ToList())
+    {
+        <tr>
+            <td>@Html.Raw(item.Name)</td>
+            <td>@Html.Raw(item.Tonnes)</td>
+            <td>@Html.Raw(item.MoistureAir)</td>
+            <td>@Html.Raw(item.MoistureTotal)</td>
+            <td>@Html.Raw(item.AshStart)</td>
+            <td>@Html.Raw(item.CalorificStart)</td>
+            <td>@Html.Raw(item.VolatileStart)</td>
+            <td>@Html.Raw(item.SulfurStart)</td>
+            <td>@Html.Raw(item.FOBStart)</td>
+            
+        </tr>
+    }
+</table>
+<br />
+@Html.ActionLink("Add Component", "NewProjectComponent", new { id=Model.ProjectID})
+<br />
+
+<h3>Vessels</h3>
+<table style="border:solid">
+    <tr>
+        <td>Vessel ID</td>
+        <td>Vessel Name</td>
+        <td>Destination</td>
+        <td>Maximum Moisture</td>
+        <td>Maximum Ash</td>
+        <td>Minimum Calorific</td>
+        <td>Volatile Max</td>
+        <td>Sulfur Max</td>
+        <td>Price Per Tonne</td>
+        <td>Tonnes Required</td>
+        <td>Calorific Benchmark</td>
+    </tr>
+
+    @foreach (var item in Model.Vessels.ToList())
+    {
+        <tr>
+            <td>@Html.Raw(item.VesselID)</td>
+            <td>@Html.Raw(item.Name)</td>
+            <td>@Html.Raw(item.Destination)</td>
+            <td>@Html.Raw(item.MoistureMax)</td>
+            <td>@Html.Raw(item.AshMax)</td>
+            <td>@Html.Raw(item.CalorificMin)</td>
+            <td>@Html.Raw(item.VolatileMax)</td>
+            <td>@Html.Raw(item.SulfurMax)</td>
+            <td>@Html.Raw(item.PricePerTonne)</td>
+            <td>@Html.Raw(item.TonnesMin)</td>
+            <td>@Html.Raw(item.CalorificBenchMark)</td>
+        </tr>
+    }
+</table>
+<br />
+@Html.ActionLink("Add Vessel", "NewProjectVessel", new { id=Model.ProjectID})
+<br />

@@ -1,0 +1,17 @@
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\SmartAdminMVC.DALContusoUni.dll.config
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\SmartAdminMVC.DALContusoUni.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\SmartAdminMVC.DALContusoUni.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\EntityFramework.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\EntityFramework.SqlServer.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\SmartAdminMvc.ArchipelagoModel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\Excel.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\SmartAdminMvc.ArchipelagoModel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\EntityFramework.xml
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\EntityFramework.SqlServer.xml
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\bin\Release\Excel.pdb
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\obj\Release\SmartAdminMVC.DALContusoUni.csprojResolveAssemblyReference.cache
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\obj\Release\ContosoUniversity.Migrations.ComplexModel.resources
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\obj\Release\SmartAdminMVC.DALContusoUni.csproj.GenerateResource.Cache
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\obj\Release\SmartAdminMVC.DALContusoUni.dll
+D:\MVC Playground\CloudArchipelago\SmartAdminMVC.DALContusoUni\obj\Release\SmartAdminMVC.DALContusoUni.pdb

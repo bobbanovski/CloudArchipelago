@@ -1,0 +1,46 @@
+﻿@model IEnumerable<SmartAdminMvc.ArchipelagoModel.Project>
+@{
+    ViewBag.Title = "NewProjectIndex";
+}
+
+<h2>Project Index</h2>
+
+<div class="jumbotron">
+    <h1>Upload your excel template</h1>
+
+    <a class="btn btn-lg btn-primary" href="~/Content/files/Vessel-Components-Template.xlsx">Download excel Template</a>
+    <br />
+    <br />
+
+    @Html.ActionLink("Create Project", "NewProjectCreate")
+    <table style="border:solid">
+        <tr>
+            <td>Project ID</td>
+            <td>Project Name</td>
+            <td>Project Start Date</td>
+            <td>Get Details</td>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.ProjectID)</td>
+                <td>@Html.DisplayFor(ModelItem => item.ProjectName)</td>
+                <td>@Html.DisplayFor(ModelItem => item.ProjectDate)</td>
+                <td>@Html.ActionLink("Details", "NewProjectDetails", new { id = item.ProjectID })</td>
+            </tr>
+        }
+    </table>
+
+
+    <h3>The current time is: @Html.Raw(ViewBag.CurrentTime)</h3>
+
+    @*@using (Html.BeginForm("TemplateUpload", "NewProject", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.Raw(ViewBag.Error)
+        <span>Upload Template</span><input class="btn btn-lg btn-success" type="file" name="excelfile" />
+        <br />
+        <input class="btn btn-lg btn-primary" type="submit" value="Upload Template" />
+    }*@
+
+</div>
