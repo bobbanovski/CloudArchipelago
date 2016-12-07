@@ -1,5 +1,0 @@
-D:\MVC Playground\CloudArchipelago\SmartAdminMvc.SolverEngine\bin\Debug\SmartAdminMvc.SolverEngine.dll
-D:\MVC Playground\CloudArchipelago\SmartAdminMvc.SolverEngine\bin\Debug\SmartAdminMvc.SolverEngine.pdb
-D:\MVC Playground\CloudArchipelago\SmartAdminMvc.SolverEngine\obj\Debug\SmartAdminMvc.SolverEngine.csprojResolveAssemblyReference.cache
-D:\MVC Playground\CloudArchipelago\SmartAdminMvc.SolverEngine\obj\Debug\SmartAdminMvc.SolverEngine.dll
-D:\MVC Playground\CloudArchipelago\SmartAdminMvc.SolverEngine\obj\Debug\SmartAdminMvc.SolverEngine.pdb

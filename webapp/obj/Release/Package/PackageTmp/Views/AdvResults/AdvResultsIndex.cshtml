@@ -138,32 +138,14 @@
                                     <table id="dt_vessels" class="table table-striped table-bordered table-hover table.display" width="100%">
                                         <thead>
                                             <tr>
-                                                <th>Vessel Name</th>
-                                                <th>Vessel Destination</th>
-                                                <th>Maximum moisture</th>
-                                                <th>Maximum Ash</th>
-                                                <th>Minimum Calorific Amount</th>
-                                                <th>Maximum Volatiles</th>
-                                                <th>Maximum Sulfur</th>
-                                                <th>Price per Tonne</th>
-                                                <th>Minimum Tonnes</th>
-                                                <th>Calorific Benchmark</th>
+                                                
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @*foreach (var vessel in Model.Vessels)
                                         {
                                             <tr>
-                                                <td>@vessel.Name</td>
-                                                <td>@vessel.Destination</td>
-                                                <td>@vessel.MoistureMax</td>
-                                                <td>@vessel.AshMax</td>
-                                                <td>@vessel.CalorificMin</td>
-                                                <td>@vessel.VolatileMax</td>
-                                                <td>@vessel.SulfurMax</td>
-                                                <td>@vessel.PricePerTonne</td>
-                                                <td>@vessel.TonnesMin</td>
-                                                <td>@vessel.CalorificBenchMark</td>
+                                                
                                             </tr>
                                         }
                                         </tbody>
@@ -262,7 +244,7 @@
                 }
 
                 var barData = {
-                    labels: ["Moisture", "Ash", "Calorific Amount", "Volatiles", "Sulfur", "PPT", "Tonnes", "Calorific Benchmark"], // Edit this
+                    labels: [], // Edit this
                     datasets: [
                        {
                            label: "Vessel Requirements",

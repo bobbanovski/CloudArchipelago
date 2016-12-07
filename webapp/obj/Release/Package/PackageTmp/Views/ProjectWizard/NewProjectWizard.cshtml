@@ -274,17 +274,7 @@
                         <table id="dt_vessels" class="table table-striped table-bordered table-hover table.display" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Vessel Id</th>
-                                    <th>Vessel Name</th>
-                                    <th>Destination</th>
-                                    <th>Total Moisture</th>
-                                    <th>Maximum Ash</th>
-                                    <th>Minimum Calorific Value</th>
-                                    <th>Maximum Volatile Matter</th>
-                                    <th>Maximum Sulfur</th>
-                                    <th>Price / Tonne</th>
-                                    <th>Tonnes Required Total</th>
-                                    <th>Benchmark Calorific Value</th>
+                                    
                                 </tr>
                             </thead>
 
@@ -293,17 +283,7 @@
                                 @foreach (var v in ViewBag.ListVessels)
                                 {
                                     <tr>
-                                        <td>@v.VesselId</td>
-                                        <td>@v.VesselName</td>
-                                        <td>@v.Destination</td>
-                                        <td>@v.MoistureTotal</td>
-                                        <td>@v.AshRejection</td>
-                                        <td>@v.CalorificRejection</td>
-                                        <td>@v.VolatileRejection</td>
-                                        <td>@v.SulfurRejection</td>
-                                        <td>@v.PricePerTonne</td>
-                                        <td>@v.TonnesRequired</td>
-                                        <td>@v.CalorificBenchmark</td>
+                                        
                                     </tr>
                                 }
                             </tbody>
@@ -336,16 +316,7 @@
                         <table id="dt_components" class="table table-striped table-bordered table-hover table.display" width="100%">
                             <thead>
                                 <tr>
-                                    <th>Component ID</th>
-                                    <th>Component Name</th>
-                                    <th>Starting Tonnage</th>
-                                    <th>Air-Dried Moisture</th>
-                                    <th>Total Moisture</th>
-                                    <th>Ash Percentage</th>
-                                    <th>Calorific Value</th>
-                                    <th>Volatiles</th>
-                                    <th>Sulfur Percentage</th>
-                                    <th>Initial FOB</th>
+                                    
                                 </tr>
                             </thead>
 
@@ -353,16 +324,7 @@
                                 @foreach (var c in ViewBag.ListComponents)
                                 {
                                     <tr>
-                                        <td>@c.ComponentID</td>
-                                        <td>@c.ComponentName</td>
-                                        <td>@c.ComponentTonnesStart</td>
-                                        <td>@c.MoistureAirDriedStart</td>
-                                        <td>@c.MoistureTotalStart</td>
-                                        <td>@c.AshStart</td>
-                                        <td>@c.CalorificValueStart</td>
-                                        <td>@c.VolatileStart</td>
-                                        <td>@c.SulfurStart</td>
-                                        <td>@c.FOBStart</td>
+                                        
                                     </tr>
                                 }
                             </tbody>
